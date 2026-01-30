@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SmartHealth Monitor Demo
 
 A premium health monitoring dashboard for hackathon demonstrations.
@@ -18,3 +19,7 @@ For the best experience (especially for Geolocation to work), run this with a lo
 3. Open the link provided (usually `http://localhost:3000`).
 
 *Note: Geolocation requires a secure context (HTTPS or localhost). It may not work if you just double-click `index.html`.*
+=======
+# HealthCareV2
+Hackathon Project
+>>>>>>> 66f7331396c88c4bd1da3c8c3ec3079363a46138

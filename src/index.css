@@ -1,0 +1,37 @@
+:root {
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --bg-color: #0f1013;
+    --panel-bg: rgba(22, 23, 29, 0.95);
+    --accent-blue: #3b82f6;
+    --accent-heart: #ef4444;
+    --watch-bezel: #2a2b30;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-body);
+    background: radial-gradient(circle at 50% 10%, #1e1e24, #0f1013);
+    overflow: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}

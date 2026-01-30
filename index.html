@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHealth | Advanced Wearable Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://img.icons8.com/color/48/heart-monitor.png" type="image/png">
+</head>
+
+<body>
+  <div class="container">
+    <header class="glass-card">
+      <div class="prowess-logo-container">
+        <div class="prowess-logo">
+          <div class="logo-pulse"></div>
+          <div class="logo-icon">
+            <svg viewBox="0 0 50 50" width="50" height="50">
+              <path d="M25 5 L45 25 L25 45 L5 25 Z" fill="none" stroke="url(#gradient1)" stroke-width="2" />
+              <circle cx="25" cy="25" r="8" fill="url(#gradient2)" />
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                </linearGradient>
+                <radialGradient id="gradient2">
+                  <stop offset="0%" style="stop-color:#a29bfe;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#6c5ce7;stop-opacity:1" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="prowess-text">PROWESS</span>
+        </div>
+        <div class="brand-divider"></div>
+        <h1>SmartHealth Monitor</h1>
+      </div>
+      <p class="tagline">Advanced Vital Tracking & Emergency Response System</p>
+    </header>
+
+    <!-- Left Column: Vitals & Controls -->
+    <div class="glass-card">
+      <div class="controls" style="margin-top: 0; margin-bottom: 2rem;">
+        <div class="control-group">
+          <button id="monitor-btn" class="monitor-btn compact-btn">
+            <span class="btn-label">Monitor Event</span>
+          </button>
+          <button id="hazard-btn" class="hazard-btn compact-btn">
+            <span class="btn-label">Hazard Test</span>
+          </button>
+        </div>
+      </div>
+
+      <h2><span id="status-dot" class="status-indicator"></span> Vitals Dashboard</h2>
+
+      <div class="smart-watch-container">
+        <div class="watch-strap top"></div>
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="watch-header">
+              <div class="watch-battery">
+                <div class="battery-level"></div>
+              </div>
+            </div>
+
+            <div class="watch-main-display">
+              <div class="heart-rate-container">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay"></div>
+                <span id="watch-bpm" class="watch-value-large">65</span>
+                <span class="watch-label-large">BPM</span>
+              </div>
+            </div>
+
+            <div class="watch-wave-display">
+              <canvas id="pulse-canvas"></canvas>
+            </div>
+
+            <div class="watch-status-footer">
+              <span id="watch-status-text">SYSTEM SECURE</span>
+              <div style="font-size: 0.5rem; opacity: 0.4; margin-top: 2px;">PRO V2 MEDICAL GRADE</div>
+            </div>
+          </div>
+        </div>
+        <div class="watch-strap bottom"></div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">Heart Rate</div>
+        <div class="metric-value" id="bpm-display">65 <span class="metric-unit">BPM</span></div>
+        <input type="range" id="bpm-slider" min="40" max="200" value="65">
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">Blood Oxygen (SpO₂)</div>
+        <div class="metric-value"><span id="spo2-display">98</span><span class="metric-unit">%</span></div>
+        <input type="range" id="spo2-slider" min="70" max="100" value="98">
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">Body Temperature</div>
+        <div class="metric-value"><span id="temp-display">36.8</span><span class="metric-unit">°C</span></div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">Blood Pressure</div>
+        <div class="metric-value"><span id="bp-display">120/80</span><span class="metric-unit">mmHg</span></div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-label">Respiratory Rate</div>
+        <div class="metric-value"><span id="resp-display">16</span><span class="metric-unit">bpm</span></div>
+      </div>
+    </div>
+
+    <!-- Right Column: Location & Logs -->
+    <div class="glass-card">
+      <h2>Location & Status</h2>
+
+      <div class="location-info">
+        <p><span class="metric-label">Status:</span> <span id="system-status"
+            style="color: var(--accent-green)">Monitoring</span></p>
+        <p><span class="metric-label">Coordinates:</span> <span id="coords" class="loading">Locating...</span></p>
+        <div id="hospitals-list">
+          <p><span class="metric-label">Nearest Hospitals:</span></p>
+          <div id="hospitals-container" class="loading">Searching for hospitals...</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 2rem;">System Logs</h2>
+      <div class="console-output" id="console-log">
+        <div class="log-entry"><span class="log-time">System:</span> Initializing SmartHealth v1.0...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

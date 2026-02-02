@@ -691,7 +691,7 @@ async function sendEmergencyAlert(isManual = false, overrideStatus = null, overr
 
     try {
         // Simple POST to reduce CORS preflight friction
-        const response = await fetch('https://hackathon-lqsytl.5sc6y6-1.usa-e2.cloudhub.io/healthcare', {
+        const response = await fetch('https://healthcare-lqsytl.5sc6y6-2.usa-e2.cloudhub.io/healthcare', {
             method: 'POST',
             body: JSON.stringify(payload)
         });
